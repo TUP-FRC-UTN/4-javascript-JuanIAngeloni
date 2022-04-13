@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <h1><span>Ejercicio Clase 2 y clase 3- - Prog 3</h1>
+  <!-- Link hoja de estilos -->
+  <link rel="stylesheet" href="Estilos.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="border" style="border-color: black; border-width: 1px;">
+      <form action="">
+        <!-- Aca va la URL donde a donde se va a commitear el proyecto. El método puede ser post, get, hub. para los forms es el get, y cuando haya una app escuchando nuestras peticiones usamos el post-->
+        <h3>CARGUE SUS DATOS.</h3>
+        <div class="form-row" style="height: 300px;">
+          <div class="form-row group col-lg-4 col-sm-12">
+            <b>Nombre:</b>
+            <!-- salto de linea br -->
+            <input type="text" class="form-control" placeholder="Ingrese Nombre" name="Ingrese Nombre" id="txtNombre" />
+          </div>
+          <div class="form-row group col-lg-4 col-sm-12">
+            <b>Apellido:</b>
+            <input type="text" class="form-control" placeholder="Ingrese Apellido" name="apellido" id="txtApellido" />
+          </div>
+          <div class="form-row group col-lg-2 col-sm-12">
+            <b>Día:</b>
+            <input type="date" class="form-control" placeholder="Elija el dia para tomar " min="2022-03-23"
+              id="dtpDate" />
+          </div>
+          <div class="form-row group col-lg-24 col-sm-44">
+            <b>Seleccione el tipo de tarjeta:</b>
+            <ul>
+              <div class="form-row group col-lg-12 col-sm-24">
+                <li>
+                  <input type="radio" name="TipoTarjeta" id="rdbTipoTarjeta" />
+                  Tarjeta Credito
+                </li>
+              </div>
+              <div class="form-row group col-lg-12 col-sm-24">
+                <li>
+                  <input type="radio" name="TipoTarjeta" id="rdbTTipoTarjeta" />
+                  Tarjeta Debito
+                </li>
+              </div>
+              <div class="form-row group col-lg-12 col-sm-24">
+                <li>
+                  <input type="radio" name="TipoTarjeta" id="rdbTTipoTarjeta" />
+                  Efectivo
+                </li>
+              </div>
+            </ul>
+          </div>
+
+          <div class="form-row group col-4g- col-sm-12">
+            <b>¿Esta compra es para regalo?</b>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1">
+
+            Regalo
+          </div>
+          <div class="form-check">
+
+            <div class="form-row group col-lg-4 col-sm-12">
+              <b>Domicilio</b>
+              <b>Seleccione una localidad</b>
+              <select class="form-control" name="Localidad" id="ddlLocalidad">
+                <option value="">Seleccione...</option>
+                <option value="1">Córdoba</option>
+                <option value="2">Alta Gracia</option>
+                <option value="3">Carlos Paz</option>
+              </select>
+            </div>
+            <div class="form-row group col-lg-4 col-sm-12">
+              <b> Dirrección:</b>
+              <input type="text" class="form-control" placeholder="Ingrese Calle" name="Calle" id="txtCalle" />
+              <input type="number" placeholder="Número" name="numero" id="numberNumero" />
+            </div>
+            <div class="form-row group col-lg-4 col-sm-12">
+              <b>¿Desea agregar un comentario al vendedor?</b>
+              <textarea type="text" class="form-control" placeholder="Comentario..." name="comentario"
+                id="txtComentario" style="background-color: rgb(207, 207, 207)" cols="40" rows="15" style="resize: none"
+                id="txtComentario"></textarea>
+            </div>
+            <div class="form-row group col-lg-3 col-sm-1">
+              <b>¿Quiere registrar la compra?</b>
+              <button type="button" onclick="validarForm();"><b>Registrar</b></button>
+            </div>
+            <button type="button" onclick="GuardarDatos();"><b>Guardar</b></button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  -->
+    <script>
+      document.getElementById('')
+
+      function validarForm() {
+
+        var txtApellido = document.getElementById('txtApellido');
+        var txtNombre = document.getElementById('txtNombre');
+        var dataFecha = document.getElementById("dtpDate").valueAsDate = new Date();;
+        var txtComentario = document.getElementById('txtComentario');
+        var radioButtonTipoTarjeta = document.getElementsByName('TipoTarjeta');
+        var dropdowlistLocalidad = document.getElementById('ddlLocalidad')
+        var txtDireccion = document.getElementById("txtCalle")
+        var numberAltura = document.getElementById('numberNumero')
+        if (txtNombre.value === '') {
+          alert("Debe ingresar un nombre")
+          return false
+        }
+        if (txtApellido.value === '') {
+          alert("Debe ingresar un Apellido")
+          return false
+        }
+        if (txtComentario.value === '') {
+          alert("Debe ingresar un comentario ")
+          return false;
+        }
+        else if (txtComentario.value.lenght > 100) {
+          alert("El comentario ingresado excede los 100 caracteres.");
+          return false;
+        }
+
+        if (txtDireccion.value === ''){
+            alert("Debe ingresar una direccion")
+            return false;
+          } 
+
+        if(dropdowlistLocalidad.value ===''){
+          alert("Debe seleccione su localidad...")
+          return false;
+        }
+        if(numberAltura.value<1){
+          alert("La altura ingresada en direccion no es valida")
+        }
+
+
+        // return true;
+      }
+
+      // function GuardarDatos(){
+      //  if(validarForm()== true){
+      //    alert("Guardanding la dateishon...")
+
+      //  }
+     //   else {
+      //    alert("Algun campo está incompleto")
+      //  }
+      //}
+      
+    </script>
+</body>
+
+</html>

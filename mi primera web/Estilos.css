@@ -1,0 +1,49 @@
+
+    body {
+      background-image: url("https://www.todofondos.net/wp-content/uploads/la-mayoria-de-las-ideas-de-diseno-colores-claros-pictures-e-inspiracion-modern.-imagen-lisos-576x1024.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    title.double:after {
+      border-bottom: 1px solid blue;
+      -webkit-box-shadow: 0 1px 0 0 rgb(0, 234, 255);
+      -moz-box-shadow: 0 1px 0 0 rgb(0, 234, 255);
+      box-shadow: 0 1px 0 0 rgb(0, 234, 255);
+      content: "";
+      margin: 0 auto; /* this centers the line to the full width specified */
+      position: absolute;
+      top: 45%; left: 0; right: 0;
+      width: 95%;
+      z-index: -1;
+  }
+
+    input::placeholder {
+      color: rgb(128, 128, 128);
+      font-weight: 400;
+    }
+    h1 {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      text-align: center;
+  }
+  h1:before, h1:after {
+      position: absolute;
+      top: 51%;
+      overflow: hidden;
+      width: 50%;
+      height: 1px;
+      content: '\a0';
+      background-color: rgb(76, 0, 255);
+  }
+  h1:before {
+      margin-left: -50%;
+
+  }
+  element {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+  }
+
+
